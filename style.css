@@ -4,6 +4,7 @@ body{
     font-family: "Barlow Condensed", sans-serif;
     opacity: 0;
     transition: opacity 0.8s ease-in-out;
+    color: black;
 }
 body.loaded {
             opacity: 1;
