@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anta">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JIECEP Executives</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Barlow Condensed, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container */
+        .container {
+            margin: 40px auto;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        /* Title */
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        .year {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Year Selection Dropdown */
+        .year-selector {
+            margin-bottom: 20px;
+            font-size: 25px;
+        }
+
+        /* Hierarchy container */
+        .hierarchy {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        /* Executive levels - Centered & responsive */
+        .level {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            width: 100%;
+        }
+
+        /* Box (Executive Members) */
+        .box {
+            background-color: #000000;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #ffffff;
+            border-color: #B3EBF2;
+            width: 250px;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+            position: relative;
+            color: #ffffff;
+        }
+        .box_text1 {
+            font-size: 26px;
+            margin-top: -10px;
+            margin-bottom: -15px;
+        }
+        .box_text2 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        /* Grid layout for legislatives */
+        .legislative-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            width: 100%;
+        }
+
+        /* Profile Picture */
+        .profile-pic {
+            width: 100px;
+            height: 150px;
+            border-radius: 10%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        .box {
+            transition: all 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        /* Hover Effect */
+        .box:hover {
+            box-shadow: 0 0 15px #b7fffa;
+            scale: 1.05;
+        }
+
+        /* Hide other year sections initially */
+        .admin-year {
+            display: none;
+        }
+
+        /* Show active year */
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="images/logo_txt.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="">ABOUT</a></li>
+                        <li><a href="admin.html">ADMIN</a></li>
+                        <li><a href="timeline.html">TIMELINE</a></li>
+
+                    </ul>
+            </div>
+            <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text">
+            <h1>Administration</h1>
+        </div>
+    </section>
+
+    <!-- Year Selection -->
+    <div class="container">
+        <div class="year-selector">
+            <label for="year">Select Administration Year:</label>
+            <select id="year" onchange="changeYear()">
+                <option value="2024-2025" selected>2024-2025</option>
+                <option value="2023-2024">2023-2024</option>
+                <option value="2022-2023">2022-2023</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Administration Sections -->
+    <div class="container admin-year active" id="2024-2025">
+        <div class="year">2024-2025</div>
+        <div class="container">
+            <div class="title">EXECUTIVES</div>
+            <div class="hierarchy">
+                <div class="level"> <!-- President -->
+                    <div class="box">
+                        <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                        <p class="box_text1">Salazar, Kent Harvey I.</p>
+                        <br>
+                        <p class="box_text2">President</p>
+                    </div>
+                </div>
+                <div class="level"> <!-- Vice Presidents -->
+                    <div class="box">
+                        <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                        <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                        <p class="box_text2">Internal Vice President</p>
+                    </div>
+                    <div class="box">
+                        <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                        <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                        <p class="box_text2">Internal Vice President</p>
+                    </div>
+                </div>
+                <div class="level"> <!-- Secretaries & Finance -->
+                    <div class="box">
+                        <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                        <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                        <p class="box_text2">Internal Vice President</p>
+                    </div>
+                    <div class="box">
+                        <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                        <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                        <p class="box_text2">Internal Vice President</p>
+                    </div>
+                    <div class="box">
+                        <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                        <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                        <p class="box_text2">Internal Vice President</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="title">LEGISLATIVES</div>
+
+            <div class="legislative-grid">
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                        <p class="box_text2">Internal Vice President</p>
+                </div>
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="title">YEAR REPRESENTATIVES</div>
+
+            <div class="legislative-grid">
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container admin-year" id="2023-2024">
+        <div class="year">2023-2024</div>
+        <div class="container">
+            <div class="title">EXECUTIVES</div>
+            <div class="hierarchy">
+                <div class="level"> <!-- President -->
+                    <div class="box">
+                        <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                        <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                        <p class="box_text2">Internal Vice President</p>
+                    </div>
+                </div>
+                <div class="level"> <!-- Vice Presidents -->
+                    <div class="box">
+                        <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                        <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                        <p class="box_text2">Internal Vice President</p>
+                    </div>
+                    <div class="box">
+                        <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                        <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                        <p class="box_text2">Internal Vice President</p>
+                    </div>
+                </div>
+                <div class="level"> <!-- Secretaries & Finance -->
+                    <div class="box">
+                        <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                        <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                        <p class="box_text2">Internal Vice President</p>
+                    </div>
+                    <div class="box">
+                        <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                        <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                        <p class="box_text2">Internal Vice President</p>
+                    </div>
+                    <div class="box">
+                        <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                        <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                        <p class="box_text2">Internal Vice President</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="title">LEGISLATIVES</div>
+
+            <div class="legislative-grid">
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="title">YEAR REPRESENTATIVES</div>
+
+            <div class="legislative-grid">
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container admin-year" id="2022-2023">
+        <div class="year">2022-2023</div>
+        <div class="container">
+            <div class="title">EXECUTIVES</div>
+            <div class="hierarchy">
+                <div class="level"> <!-- President -->
+                    <div class="box">
+                        <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                        <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                        <p class="box_text2">Internal Vice President</p>
+                    </div>
+                </div>
+                <div class="level"> <!-- Vice Presidents -->
+                    <div class="box">
+                        <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                        <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                        <p class="box_text2">Internal Vice President</p>
+                    </div>
+                    <div class="box">
+                        <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                        <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                        <p class="box_text2">Internal Vice President</p>
+                    </div>
+                </div>
+                <div class="level"> <!-- Secretaries & Finance -->
+                    <div class="box">
+                        <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                        <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                        <p class="box_text2">Internal Vice President</p>
+                    </div>
+                    <div class="box">
+                        <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                        <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                        <p class="box_text2">Internal Vice President</p>
+                    </div>
+                    <div class="box">
+                        <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                        <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                        <p class="box_text2">Internal Vice President</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="title">LEGISLATIVES</div>
+
+            <div class="legislative-grid">
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="title">YEAR REPRESENTATIVES</div>
+
+            <div class="legislative-grid">
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+                <div class="box">
+                    <img class="profile-pic" src="https://hancockogundiyapartners.com/wp-content/uploads/2019/07/dummy-profile-pic-300x300.jpg" alt="Profile Picture">
+                    <p class="box_text1">Padayao, Joshua  P.</p>
+                        <br>
+                    <p class="box_text2">Internal Vice President</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function changeYear() {
+            let selectedYear = document.getElementById("year").value;
+
+            // Hide all sections
+            document.querySelectorAll(".admin-year").forEach(section => {
+                section.classList.remove("active");
+            });
+
+            // Show selected section
+            let activeSection = document.getElementById(selectedYear);
+            activeSection.classList.add("active");
+
+            // Apply entrance animation for the newly selected section
+            animateBoxes(activeSection);
+        }
+
+        function animateBoxes(section) {
+            // Select all boxes in the active section
+            let boxes = section.querySelectorAll(".box");
+
+            // Reset opacity and transform before reapplying animation
+            boxes.forEach(box => {
+                box.style.opacity = "0";
+                box.style.transform = "translateY(20px)";
+            });
+
+            // Animate each box with a delay
+            boxes.forEach((box, index) => {
+                setTimeout(() => {
+                    box.style.opacity = "1";
+                    box.style.transform = "translateY(0)";
+                }, index * 300); // Delay each box slightly
+            });
+        }
+
+        // Apply animation when the page loads for the default year (2024-2025)
+        document.addEventListener("DOMContentLoaded", function () {
+            let activeSection = document.getElementById("2024-2025");
+            animateBoxes(activeSection);
+        });
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("loaded");
+        });
+
+        window.addEventListener("beforeunload", () => {
+            document.body.style.opacity = 0;
+        });
+    </script>
+
+</body>
+</html>
